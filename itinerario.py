@@ -20,15 +20,18 @@ def criarmatriz(tamanho):
 def viagens(matriz):
     cidadePartida = distancia = 0
     viagem = cidadeChegada = 1
-
-    while cidadeChegada != 0:
+    it = int(input('Quantos itinerários gostaria de realizar: '))
+    while it > 0:
         cidadeChegada = -1
-        while cidadeChegada > num or cidadeChegada < 0:
-            cidadeChegada = int(input('Qual cidade deseja ir: '))
+        while cidadeChegada > num-1 or cidadeChegada < 0:
+            cidadeChegada = int(input('Qual cidade deseja ir: '))-1
         print(f'{viagem}° viagem, distância: {matriz[cidadePartida][cidadeChegada]}')
+        if cidadeChegada == 0:
+            it -=1
         viagem+=1
         distancia += matriz[cidadePartida][cidadeChegada]
         cidadePartida = cidadeChegada
+        
     print(f'total de percorrido {distancia}')
 
 

@@ -1,6 +1,6 @@
-num = str(input('Digite os numeros do primeiro vetor: ')).strip()
+num = str(input('Digite os numeros do primeiro vetor(separe somente com espaçoe): ')).strip()
 vetor1 = (num.split(' '))
-num = str(input('Digite o próximo vetor: ')).strip()
+num = str(input('Digite o próximo vetor(separe somente com espaçoe)): ')).strip()
 vetor2 = (num.split(' '))
 mediana = []
 
@@ -16,6 +16,7 @@ for c in range(len(vetor2)):
             mediana.append(vetor2[c])
 mediana.sort()
 metade = len(mediana)//2
+print(metade)
 if len(mediana) % 2 == 0:
     print('A mediana encontrada para os vetores foi de {}'.format((mediana[metade-1]+mediana[metade])/2))
 else:
